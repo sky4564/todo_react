@@ -21,7 +21,7 @@ function Render() {
             canvas,
             antialias: true,
         });
-        renderer.setSize(window.innerWidth, window.innerHeight)
+        renderer.setSize(250, 250)
         document.body.appendChild(renderer.domElement)
 
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
@@ -56,7 +56,7 @@ function Render() {
     }, [])
     
     return (    
-    <canvas id="myThreeJsCanvas" width="30px" height="30px"></canvas>
+    <canvas id="myThreeJsCanvas"></canvas>
     );
 }
 
