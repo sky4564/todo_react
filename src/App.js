@@ -1,13 +1,16 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import Board from './component/todoBoard';
-// import Renderer from './component/Renderer'
+import Renderer from './component/Renderer'
 
 
 // todo 적을 인풋창 + 제출 버튼
 // 제출한거 표시되는 게시판
 // 게시되어있는거 삭제하는 버튼
 function App() {
+    
+    
+    
     useEffect(() => {
         console.log('mounted!')        
     })
@@ -19,9 +22,18 @@ function App() {
         console.log(document.getElementById('todoinput').value)
         setinPutValue('')
     }
+    
+    // =======================================================================================//
+    // 조건부 컴포넌트 렌더링
+    let render = true
+    let renderItem
+    render === true ? renderItem = <Renderer/> : renderItem =<div>render value == false</div>
+    // =======================================================================================//
+    
     return (
+        
     <div className="App">    
-    {/* <Renderer/> */}
+    {renderItem}
     
     <input id='todoinput' className='todoInput' value={inputValue} type = "text"
     placeholder="니가 뭘 할 수 있는데? ㅋㅋ"
