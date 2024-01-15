@@ -27,14 +27,20 @@ function App() {
     // 조건부 컴포넌트 렌더링
     let render = true
     let renderItem
-    render === true ? renderItem = <Renderer/> : renderItem =<div>render value == false</div>
+    render ? renderItem = <Renderer/> : renderItem =<div>render value == false</div>
     // =======================================================================================//
     
     return (
         
     <div className="App">    
-    {renderItem}
     
+    {/* // 조건부 컴포넌트 렌더링 여러가지 형태로  */}
+    {renderItem}
+    {render ? <Renderer/>  :  <div> render value == false </div> }
+    {render && <Renderer />}    
+    {/* -------------------------------------------*/}
+    
+
     <input id='todoinput' className='todoInput' value={inputValue} type = "text"
     placeholder="니가 뭘 할 수 있는데? ㅋㅋ"
     onChange={(event) => {setinPutValue(event.target.value)}}/>
