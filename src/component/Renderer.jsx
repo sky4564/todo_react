@@ -38,6 +38,7 @@ function Render() {
         const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial)        
         scene.add(boxMesh)
 
+        // eslint-disable-next-line no-unused-vars
         const controls = new OrbitControls(camera, renderer.domElement)
 
         // add FPS stats
