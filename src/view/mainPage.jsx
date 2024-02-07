@@ -4,12 +4,14 @@ import Board from 'component/todoBoard';
 import RenderingList from 'component/RenderingList';
 import MyButton from 'component/MyButton';
 import WhiteSpace from 'component/WhiteSpace';
+import InputBar from 'component/InputBar'
+
 
 // todo 적을 인풋창 + 제출 버튼
 // 제출한거 표시되는 게시판
 // 게시되어있는거 삭제하는 버튼
 
-function App() {
+function MainPage() {
     useEffect(() => {
     })
 
@@ -32,15 +34,15 @@ function App() {
             <WhiteSpace repeat={5} />
             {/* 컴포넌트 사용 + props 활용 */}
             <MyButton count={count} onClick={counting} />
-            <MyButton count={count} onClick={counting} />
-            <input id='todoinput' className='todoInput' value={inputValue} type="text"
-                placeholder="무엇이든 시도 할 수 있다."
-                onChange={(event) => { setinPutValue(event.target.value) }} />
-            <button className='submit_btn' onClick={addItem}>추가</button>
+            <InputBar
+                inputValue={inputValue}
+                onInputValueChange={setinPutValue}
+                onAddItem={addItem}
+            />
             <Board todoList={todoList} />
         </div>
     );
 }
 
 
-export default App;
+export default MainPage;
